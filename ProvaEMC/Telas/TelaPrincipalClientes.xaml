@@ -1,0 +1,75 @@
+﻿<Window x:Class="ProvaEMC.Telas.TelaPrincipalClientes"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProvaEMC.Telas"
+        mc:Ignorable="d"
+          Title="Tela Principal Clientes" Height="800" Width="900" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Background="CornflowerBlue">
+
+    <Canvas Margin="10">
+        <Grid Height="182">
+            <TextBlock Margin="230,-3,210,65" FontSize="50" HorizontalAlignment="Center" Width="432" TextAlignment="Center">Prova EMC by Alex</TextBlock>
+            <TextBlock Margin="345,74,379,60" FontSize="35" HorizontalAlignment="Center" Width="148" VerticalAlignment="Center" TextAlignment="Center" >Clientes</TextBlock>
+
+            <Button Margin="0,0,10,68" Name="Adicionar" Content="Adicionar" FontSize="20" Width="120" Height="60" HorizontalAlignment="Right" ToolTip="Adicionar" VerticalAlignment="Bottom" Click="Adicionar_Click"></Button>
+            <Button Margin="0,0,742,68" Name="Voltar" Content="Voltar" FontSize="20" Width="120" Height="60" HorizontalAlignment="Right" ToolTip="Adicionar" VerticalAlignment="Bottom" Click="Voltar_Click"></Button>
+
+            <TextBlock FontSize="18" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Buscar: " VerticalAlignment="Top" Margin="12,131,0,-15"/>
+            <TextBox x:Name="TextBusca" FontSize="18" HorizontalAlignment="Left" Height="25" Margin="78,130,0,-15" TextWrapping="Wrap" VerticalAlignment="Top" Width="157" TextChanged="TextBusca_TextChangedAsync"/>
+        </Grid>
+
+        <DataGrid  Name="TabelaView" HorizontalAlignment="Center" VerticalAlignment="Center"  Height="553"  Width="872" CanUserResizeColumns="False" CanUserResizeRows="False" IsReadOnly="True" Margin="1,187,1,11" Background="LightBlue">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Id}" Header="ID" Width="25"/>
+                <DataGridTextColumn Binding="{Binding Nome}" Header="Nome" Width="130"/>
+                <DataGridTextColumn Binding="{Binding Idade}" Header="Idade" Width="60"/>
+
+                <DataGridTemplateColumn Header="Endereço" Width="370" IsReadOnly="True">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock TextWrapping="WrapWithOverflow">
+                                <TextBlock.Text>
+                                    <MultiBinding StringFormat=" {0}   {1}   {2}  {3}  {4}  {5}">
+                                        <Binding Path="Endereco.Rua"></Binding>
+                                        <Binding Path="Endereco.Numero" ></Binding>
+                                        <Binding Path="Endereco.Bairro" ></Binding>
+                                        <Binding Path="Endereco.Cidade"></Binding>
+                                        <Binding Path="Endereco.Estado"></Binding>
+                                        <Binding Path="Endereco.Cep"></Binding>
+                                    </MultiBinding>
+
+                                </TextBlock.Text>
+                            </TextBlock>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Header="Contatos">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Margin="10" Name="ButtonContatos" Content="Contatos" FontSize="13" Width="70" Height="40" HorizontalAlignment="Center" ToolTip="Mostrar Contatos" VerticalAlignment="Center" Click="ButtonContatos_Click"></Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Header="Alterar">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Margin="10" Name="ButtonAlterar" Content="Alterar" FontSize="13" Width="70" Height="40" HorizontalAlignment="Center" ToolTip="Alterar Informações" VerticalAlignment="Center" Click="ButtonAlterar_Click"></Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Header="Deletar">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Margin="10" Name="ButtonDeletar" Content="Deletar" FontSize="13" Width="70" Height="40" HorizontalAlignment="Center" ToolTip="Deletar Cliente" VerticalAlignment="Center" Click="ButtonDeletar_ClickAsync"></Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+            </DataGrid.Columns>
+        </DataGrid>
+    </Canvas>
+</Window>

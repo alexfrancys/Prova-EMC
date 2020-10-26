@@ -1,0 +1,17 @@
+﻿<Window x:Class="ProvaEMC.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="Telas\clr-namespace:ProvaEMC"
+        mc:Ignorable="d"
+        Title="Prova EMC" Height="409.416" Width="400" ToolTip="Tela Início" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Canvas Background="LightBlue">
+        <TextBlock HorizontalAlignment="Center" Text="Prova EMC" TextAlignment="Center" FontSize="25" VerticalAlignment="Center" Height="83" Width="392" Canvas.Left="2"/>
+
+        <Button x:Name="Clientes" FontSize="16" FontWeight="Bold" Width="110" Height="200" Canvas.Left="50" Canvas.Top="100" Click="Clientes_Click" Background="LightSalmon" >Clientes</Button>
+
+        <Button x:Name="Fornecedores" FontSize="16" FontWeight="Bold" Width="110" Height="200" Canvas.Left="232" Canvas.Top="100" Background="LightSalmon" Click="Fornecedores_Click" >Fornecedores</Button>
+
+    </Canvas>
+</Window>

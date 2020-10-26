@@ -1,0 +1,64 @@
+﻿<Window x:Class="ProvaEMC.Telas.CadastroFornecedor"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProvaEMC.Telas"
+        mc:Ignorable="d"
+        Title="Cadastro de Fornecedor" Height="638.595" Width="600" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Background="LightBlue">
+
+    <Canvas Margin="0,0,0,544" Background="CornflowerBlue">
+        <Label Content="Cadastro de Fornecedor" FontSize="25" HorizontalAlignment="Center" VerticalAlignment="Center" Height="48" Width="293" Canvas.Left="166" Canvas.Top="10"/>
+
+        <TextBlock Text="Nome: " FontSize="16" Canvas.Left="20" Canvas.Top="85"/>
+        <TextBox x:Name="TextNome" FontSize="16" Background="White" Width="155" Canvas.Left="72" Canvas.Top="85" MaxLength="60"></TextBox>
+
+        <TextBlock Text="Prazo de Entrega: " FontSize="16" Canvas.Left="20" Canvas.Top="125"></TextBlock>
+        <TextBlock Text="dias." FontSize="16" Canvas.Left="276" Canvas.Top="125"/>
+        <TextBox x:Name="TextPrazoEntrega" FontSize="16" Background="White" Width="109"  Canvas.Top="125" MaxLength="60" Canvas.Left="153"></TextBox>
+
+        <TextBlock Text="Endereço: " FontSize="18" Canvas.Left="20" Canvas.Top="178"></TextBlock>
+
+        <TextBlock Text="Digite o CEP: " FontSize="16" Canvas.Left="20" Canvas.Top="222"></TextBlock>
+        <TextBox x:Name="TextCEP" FontSize="16" Background="White" Width="155" Canvas.Left="120" Canvas.Top="220"></TextBox>
+
+        <Button x:Name="ButtonBuscarCEP" Content="Buscar CEP" Width="90" FontSize="16" Canvas.Left="317" Canvas.Top="220" Click="ButtonBuscarCEP_Click"></Button>
+
+        <TextBlock Text="Rua: " FontSize="16" Canvas.Left="20" Canvas.Top="270"></TextBlock>
+        <TextBox x:Name="TextRua" FontSize="16" Background="White" Width="240" Canvas.Left="60" Canvas.Top="268"></TextBox>
+
+        <TextBlock Text="Número: " FontSize="16" Canvas.Left="317" Canvas.Top="270" RenderTransformOrigin="0.161,0.835"></TextBlock>
+        <TextBox x:Name="TextNumero" FontSize="16" Background="White" Width="40" Canvas.Left="388" Canvas.Top="270"></TextBox>
+
+        <TextBlock Text="Complemento: " FontSize="16" Canvas.Left="20" Canvas.Top="309"></TextBlock>
+        <TextBox x:Name="TextComplemento" FontSize="16" Background="White" Width="230" Canvas.Left="134" Canvas.Top="309"></TextBox>
+
+        <TextBlock Text="Bairro: " FontSize="16" Canvas.Left="378" Canvas.Top="309"></TextBlock>
+        <TextBox x:Name="TextBairro" FontSize="16" Background="White" Width="137" Canvas.Left="433" Canvas.Top="309"></TextBox>
+
+        <TextBlock Text="Cidade: " FontSize="16" Canvas.Left="20" Canvas.Top="348"></TextBlock>
+        <TextBox x:Name="TextCidade" FontSize="16" Background="White" Width="166" Canvas.Left="82" Canvas.Top="348"></TextBox>
+
+        <TextBlock Text="Estado: " FontSize="16" Canvas.Left="279" Canvas.Top="348"></TextBlock>
+        <TextBox x:Name="TextEstado" FontSize="16" Background="White" Width="77" Canvas.Left="339" Canvas.Top="348"></TextBox>
+
+        <TextBlock Text="Contato: (Após o cadastro outros contatos poderão serem adicionados)" FontSize="16" Canvas.Left="20" Canvas.Top="404"></TextBlock>
+
+        <TextBlock Text="Nome: " FontSize="16" Canvas.Left="20" Canvas.Top="449"></TextBlock>
+        <TextBox x:Name="TextContatoNome" FontSize="16" Background="White" Canvas.Left="76" Canvas.Top="449" Width="131"></TextBox>
+
+        <TextBlock Text="Número Telefone: " FontSize="16" Canvas.Left="222" Canvas.Top="449"></TextBlock>
+        <TextBox x:Name="TextContatoNum" FontSize="16" Background="White" Canvas.Left="352" Canvas.Top="449" Width="136"></TextBox>
+
+        <TextBlock Text="Tipo: " FontSize="16" Canvas.Left="20" Canvas.Top="486"></TextBlock>
+        <ComboBox Name="ComboboxTipo" Width="107" Canvas.Left="64" Canvas.Top="486">
+            <ComboBoxItem>Residêncial</ComboBoxItem>
+            <ComboBoxItem>Comercial</ComboBoxItem>
+            <ComboBoxItem>Celular</ComboBoxItem>
+        </ComboBox>
+
+        <Button x:Name="ButtonCadastrar" Content="Cadastrar" Width="120" Height="40" Canvas.Left="129" Canvas.Top="540" Click="ButtonCadastrar_ClickAsync"></Button>
+        <Button x:Name="ButtonCancelar" Content="Cancelar" Width="120" Height="40" Canvas.Left="339" Canvas.Top="540" Click="ButtonCancelar_Click"></Button>
+
+    </Canvas>
+</Window>

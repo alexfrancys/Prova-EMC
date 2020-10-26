@@ -1,0 +1,33 @@
+﻿<Window x:Class="ProvaEMC.Telas.TelaContatos"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProvaEMC.Telas"
+        mc:Ignorable="d"
+        Title="Contatos" Height="450" Width="547.954" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Background="LightBlue">
+
+    <Canvas Background="CornflowerBlue" Margin="0,0,0,364">
+        <TextBlock Text="Contatos" FontSize="20" Canvas.Left="201" Canvas.Top="10"></TextBlock>
+        <Button Name="Adicionar" Content="Adicionar Contato" FontSize="16" Width="138" Height="37" HorizontalAlignment="Right" ToolTip="Adicionar" VerticalAlignment="Bottom" Canvas.Left="375" Canvas.Top="10" Click="Adicionar_Click"/>
+
+        <DataGrid x:Name="DataGridContatos" Height="344" Width="515" Canvas.Left="12" Canvas.Top="67" IsReadOnly="True" CanUserResizeColumns="False" CanUserResizeRows="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding ContatoId}" Header="ID" Width="25" Visibility="Hidden"/>
+                <DataGridTextColumn Header="Nome" Binding="{Binding Nome}" Width="150" ></DataGridTextColumn>
+                <DataGridTextColumn Header="Número" Binding="{Binding Numero}" Width="145"></DataGridTextColumn>
+                <DataGridTextColumn Header="Tipo" Binding="{Binding Tipo}" Width="118"></DataGridTextColumn>
+                <DataGridTemplateColumn Header="Deletar">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Margin="10" Name="ButtonDeletar" Content="Deletar" FontSize="13" Width="45" Height="20" HorizontalAlignment="Center" ToolTip="Deletar Contato" VerticalAlignment="Center" Click="ButtonDeletar_ClickAsync"></Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                
+            </DataGrid.Columns>
+        </DataGrid>
+
+    </Canvas>
+
+</Window>
